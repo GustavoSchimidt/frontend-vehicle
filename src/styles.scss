@@ -1,0 +1,52 @@
+/* Estilos globais */
+
+/* Importação do Bootstrap via CDN já está sendo feita no componente principal */
+
+/* Estilos personalizados */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Estilos para os cards */
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os botões */
+.btn {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilos para as tabelas */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Estilos para os formulários */
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+}
+
+/* Estilos para mensagens de erro */
+.text-danger {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
