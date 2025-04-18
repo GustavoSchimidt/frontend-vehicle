@@ -10,25 +10,14 @@ Projeto desenvolvido em Angular para gerenciamento de veículos.
 
 2. **Instale as dependências:**
    ```bash
-   npm install
+   yarn install
    ```
 
 3. **Inicie o servidor de desenvolvimento:**
    ```bash
-   ng serve
+   yarn start
    ```
    O aplicativo estará disponível em [http://localhost:4200/](http://localhost:4200/).
-
-4. **Build para produção:**
-   ```bash
-   ng build
-   ```
-   Os arquivos serão gerados na pasta `dist/`.
-
-5. **Testes unitários:**
-   ```bash
-   ng test
-   ```
 
 ## Páginas e Rotas Disponíveis
 

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -40,18 +41,22 @@ import { RouterModule } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Gerenciamento de Veículos';
 
-  ngOnInit(): void {
-    const bootstrapCss = document.createElement('link');
-    bootstrapCss.rel = 'stylesheet';
-    bootstrapCss.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css';
-    bootstrapCss.integrity = 'sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN';
-    bootstrapCss.crossOrigin = 'anonymous';
-    document.head.appendChild(bootstrapCss);
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-    const bootstrapScript = document.createElement('script');
-    bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
-    bootstrapScript.integrity = 'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL';
-    bootstrapScript.crossOrigin = 'anonymous';
-    document.body.appendChild(bootstrapScript);
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const bootstrapCss = document.createElement('link');
+      bootstrapCss.rel = 'stylesheet';
+      bootstrapCss.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css';
+      bootstrapCss.integrity = 'sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN';
+      bootstrapCss.crossOrigin = 'anonymous';
+      document.head.appendChild(bootstrapCss);
+
+      const bootstrapScript = document.createElement('script');
+      bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
+      bootstrapScript.integrity = 'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL';
+      bootstrapScript.crossOrigin = 'anonymous';
+      document.body.appendChild(bootstrapScript);
+    }
   }
 }
